@@ -1,0 +1,254 @@
+<!DOCTYPE html> <!-- Declaration of the document type -->
+<html lang="en"> <!-- Opening tag for HTML document with language attribute set to English -->
+<head> <!-- Opening tag for the head section containing metadata -->
+    <meta charset="UTF-8"> <!-- Character encoding declaration -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport settings for responsive design -->
+    <title>MSR's Resume</title> <!-- Title of the document -->
+    <style> /* Opening tag for inline CSS styling */
+        /* Universal selector for all elements */
+        *{
+            box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+            font-family: Arial, sans-serif; /* Font family for text */
+        }
+        /* Styling for the body element */
+        body 
+        {
+            margin: 0; /* Reset margin to 0 */
+            padding: 0; /* Reset padding to 0 */
+            background-color: #121212; /* Background color set to dark gray */
+            color: #fff; /* Text color set to white */
+            line-height: 1.6; /* Line height set to 1.6 */
+        }
+        /* Styling for a container div */
+        .container 
+        {
+            max-width: 800px; /* Maximum width set to 800 pixels */
+            margin: auto; /* Center the container horizontally */
+            padding: 20px; /* Padding set to 20 pixels */
+            background-color: #333; /* Background color set to dark gray */
+            border-radius: 10px; /* Border radius set to 10 pixels */
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.5); /* Box shadow for a subtle effect */
+            margin-top: 20px; /* Top margin set to 20 pixels */
+            animation: fadeIn 1s ease; /* Animation effect */
+        }
+        /* Styling for the header element */
+        header 
+        {
+            text-align: center; /* Text alignment set to center */
+            padding-bottom: 20px; /* Bottom padding set to 20 pixels */
+            border-bottom: 2px solid #007bff; /* Bottom border with blue color */
+            animation: slideInDown 1s ease; /* Animation effect */
+        }
+        /* Styling for the heading within the header */
+        header h1 
+        {
+            margin: 0; /* Reset margin to 0 */
+            color: #007bff; /* Text color set to blue */
+            font-size: 3em; /* Font size set to 3em */
+            animation: slideInLeft 1s ease; /* Animation effect */
+        }
+        /* Styling for the profile picture */
+        .profile-pic 
+        {
+            width: 150px; /* Width set to 150 pixels */
+            height: 150px; /* Height set to 150 pixels */
+            border-radius: 50%; /* Border radius set to 50% for a circular shape */
+            background-size: cover; /* Background size set to cover */
+            background-position: center; /* Background position set to center */
+            margin: 20px auto; /* Margin set to 20 pixels from top and bottom, auto horizontally */
+            border: 5px solid #007bff; /* Border with blue color */
+        }
+        /* Styling for the navigation */
+        nav 
+        {
+            text-align: center; /* Text alignment set to center */
+            margin-top: 20px; /* Top margin set to 20 pixels */
+        }
+        /* Styling for navigation links */
+        nav a 
+        {
+            color: #fff; /* Text color set to white */
+            text-decoration: none; /* Text decoration removed */
+            margin: 0 10px; /* Margin set to 0 horizontally and 10 pixels vertically */
+            font-size: 1.2em; /* Font size set to 1.2em */
+            cursor: pointer; /* Cursor set to pointer */
+            transition: color 0.3s ease; /* Smooth transition effect for color */
+        }
+        /* Styling for navigation links on hover */
+        nav a:hover
+        {
+            color: #007bff; /* Text color set to blue */
+        }
+        /* Styling for sections */
+        .section 
+        {
+            margin-bottom: 30px; /* Bottom margin set to 30 pixels */
+            animation: fadeIn 1s ease; /* Animation effect */
+        }
+        /* Styling for section headings */
+        .section h2 
+        {
+            color: #007bff; /* Text color set to blue */
+            font-size: 1.8em; /* Font size set to 1.8em */
+            margin-bottom: 10px; /* Bottom margin set to 10 pixels */
+            cursor: pointer; /* Cursor set to pointer */
+        }
+        /* Styling for content within sections */
+        .content 
+        {
+            display: none; /* Content initially hidden */
+            padding: 10px 0; /* Padding set to 10 pixels vertically */
+            border-top: 1px solid #007bff; /* Top border with blue color */
+            margin-top: 20px; /* Top margin set to 20 pixels */
+            color: #ddd; /* Text color set to light gray */
+            font-size: 1.1em; /* Font size set to 1.1em */
+            line-height: 1.8; /* Line height set to 1.8 */
+        }
+        /* Styling for active content */
+        .content.active 
+        {
+            display: block; /* Content displayed */
+        }
+        /* Styling for the footer */
+        footer 
+        {
+            text-align: center; /* Text alignment set to center */
+            padding: 20px 0; /* Padding set to 20 pixels vertically */
+            color: #ddd; /* Text color set to light gray */
+            border-top: 2px solid #007bff; /* Top border with blue color */
+            animation: slideInUp 1s ease; /* Animation effect */
+        }
+        @keyframes fadeIn 
+        {
+            from { opacity: 0; } /* Starting opacity set to 0 */
+            to { opacity: 1; } /* Ending opacity set to 1 */
+        }
+        @keyframes slideInDown
+        {
+            from { transform: translateY(-100%); } /* Starting position above the viewport */
+            to { transform: translateY(0); } /* Ending position at the top */
+        }
+        @keyframes slideInUp 
+        {
+            from { transform: translateY(100%); } /* Starting position below the viewport */
+            to { transform: translateY(0); } /* Ending position at the bottom */
+        }
+        @keyframes slideInLeft 
+        {
+            from { transform: translateX(-100%); } /* Starting position to the left of the viewport */
+            to { transform: translateX(0); } /* Ending position at the left */
+        }
+        @keyframes backgroundFade 
+        {
+            0% { background-color: #000000; } /* Starting background color */
+            25% { background-color: #112033; } /* Intermediate background color */
+            50% { background-color: #3c0048; } /* Intermediate background color */
+            75% { background-color: #002f58; } /* Intermediate background color */
+            100% { background-color: #005912; } /* Ending background color */
+        }
+        @keyframes textFade
+        {
+            0% { color: #FFFFFF; } /* Starting text color */
+            25% { color: #ffe600; } /* Intermediate text color */
+            50% { color: #00ffb7; } /* Intermediate text color */
+            75% { color: #ff00e1; } /* Intermediate text color */
+            100% { color: #ff0000; } /* Ending text color */
+        }
+        /* Applying the background animation to the body */
+        body 
+        {
+            animation: backgroundFade 10s infinite alternate; /* Background color animation */
+        }
+        /* Applying the text color animation to all text */
+        .container, nav a, .section h2, footer p, footer a, .content, header h1 
+        {
+            animation: textFade 10s infinite alternate; /* Text color animation */
+        }
+    </style>
+</head>
+<body> <!-- Opening tag for the body of the document -->
+    <header> <!-- Header section containing resume title and profile picture -->
+        <h1>Resume</h1> <!-- Heading for the resume title -->
+        <img src="Photo.jpg" alt="Profile Picture" class="profile-pic"> <!-- Profile picture -->
+    </header>
+    
+    <nav> <!-- Navigation section -->
+        <!-- Navigation links with onclick event to toggle content visibility -->
+        <a href="#skillsContent" onclick="toggleContentVisibility('skills')">Skills</a>
+        <a href="#educationContent" onclick="toggleContentVisibility('education')">Education</a>
+        <a href="#experienceContent" onclick="toggleContentVisibility('experience')">Experience</a>
+        <a href="#projectsContent" onclick="toggleContentVisibility('projects')">Projects</a>
+    </nav>
+    
+    <div class="container"> <!-- Container for sections -->
+        <section id="skills" class="section"> <!-- Skills section -->
+            <h2>Skills</h2> <!-- Heading for skills -->
+            <div class="content" id="skillsContent"> <!-- Content for skills -->
+                <!-- List of skills -->
+                <p>Programming Languages: HTML, CSS, JavaScript, Python</p>
+                <p>Tools & Technologies: Git, Docker, Node.js</p>
+                <p>Soft Skills: Teamwork, Communication, Problem-Solving</p>
+            </div>
+        </section>
+        <section id="education" class="section"> <!-- Education section -->
+            <h2>Education</h2> <!-- Heading for education -->
+            <div class="content" id="educationContent"> <!-- Content for education -->
+                <!-- Education details -->
+                <p>Bachelor of Science in Computer Science</p>
+                <p>Amrita University, 2023 - 2027</p>
+                <p>CGPA: 9/10</p>
+            </div>
+        </section>
+        <section id="experience" class="section"> <!-- Experience section -->
+            <h2>Experience</h2> <!-- Heading for experience -->
+            <div class="content" id="experienceContent"> <!-- Content for experience -->
+                <!-- Experience details -->
+                <p>Not Employed</p>
+                <p>Aug 2023 - Present</p>
+                <ul>
+                    <li>Developed and maintained web applications using HTML, CSS, and JavaScript.</li>
+                    <li>Collaborated with cross-functional teams to define, design, and ship new features.</li>
+                    <li>Worked on improving application performance and bug fixing.</li>
+                </ul>
+            </div>
+        </section>
+        <section id="projects" class="section"> <!-- Projects section -->
+            <h2>Projects</h2> <!-- Heading for projects -->
+            <div class="content" id="projectsContent"> <!-- Content for projects -->
+                <!-- Project details -->
+                <p>Personal Portfolio Website</p>
+                <ul>
+                    <li>Designed and developed a personal portfolio website to showcase my web development projects and skills.</li>
+                    <li>Technologies used: HTML, CSS, JavaScript, React.</li>
+                </ul>
+                <p>E-commerce Website for Local Business</p>
+                <ul>
+                    <li>Developed a fully functional e-commerce website for a local business to expand their market online.</li>
+                    <li>Included features like product management, a shopping cart, and payment gateway integration.</li>
+                    <li>Technologies used: Django, HTML, CSS, JavaScript.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <footer> <!-- Footer section -->
+        <p>
+            Gmail: <a href="mailto:ms.raaghavan@gmail.com" style="color: #007bff;">Get in touch</a> | <!-- Gmail link -->
+            Phone: <a href="tel:+6303800138" style="color: #007bff;">6303800138</a> | <!-- Phone link -->
+            LinkedIn: <a href="https://in.linkedin.com/in/raaghavan-m-s-026359260" target="_blank" style="color: #007bff;">Connect</a> <!-- LinkedIn link -->
+        </p>
+    </footer>
+
+    <script>
+        function toggleContentVisibility(sectionId) // Function to toggle content visibility
+        { 
+            var content = document.getElementById(sectionId + 'Content');//  Get content element by ID 
+            var isActive = content.classList.contains('active'); // Check if content is active 
+            document.querySelectorAll('.content').forEach(function(c) { c.classList.remove('active'); });//  Remove active class from all content elements 
+            if (!isActive) // If content is not active  
+            { 
+                content.classList.add('active'); // Add active class to content 
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSR's Resume</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body 
+        {
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #fff;
+            line-height: 1.6;
+        }
+        .container 
+        {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+            margin-top: 20px;
+            animation: fadeIn 1s ease;
+        }
+        header 
+        {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #007bff;
+            animation: slideInDown 1s ease;
+        }
+        header h1 
+        {
+            margin: 0;
+            color: #007bff;
+            font-size: 3em;
+            animation: slideInLeft 1s ease;
+        }
+        .profile-pic 
+        {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin: 20px auto;
+            border: 5px solid #007bff;
+        }
+        nav 
+        {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav a 
+        {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        nav a:hover
+        {
+            color: #007bff;
+        }
+        .section 
+        {
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease;
+        }
+        .section h2 
+        {
+            color: #007bff;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .content 
+        {
+            display: none;
+            padding: 10px 0;
+            border-top: 1px solid #007bff;
+            margin-top: 20px;
+            color: #ddd;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .content.active 
+        {
+            display: block;
+        }
+        footer
+        {
+            text-align: center;
+            padding: 20px 0;
+            color: #ddd;
+            border-top: 2px solid #007bff;
+            animation: slideInUp 1s ease;
+        }
+        @keyframes fadeIn 
+        {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInDown 
+        {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        @keyframes slideInUp 
+        {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        @keyframes slideInLeft 
+        {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        @keyframes backgroundFade 
+        {
+            0% { background-color: #000000; }
+            25% { background-color: #112033; }
+            50% { background-color: #3c0048; }
+            75% { background-color: #002f58; }
+            100% { background-color: #005912; }
+        }
+        @keyframes textFade 
+        {
+            0% { color: #FFFFFF; }
+            25% { color: #ffe600; }
+            50% { color: #00ffb7; }
+            75% { color: #ff00e1; }
+            100% { color: #ff0000; }
+        }
+        body 
+        {
+            animation: backgroundFade 10s infinite alternate;
+        }
+        .container, nav a, .section h2, footer p, footer a, .content, header h1 
+        {
+            animation: textFade 10s infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Resume</h1>
+        <img src="Photo.jpg" alt="Profile Picture" class="profile-pic">
+    </header>
+    
+    <nav>
+        <a href="#skillsContent" onclick="toggleContentVisibility('skills')">Skills</a>
+        <a href="#educationContent" onclick="toggleContentVisibility('education')">Education</a>
+        <a href="#experienceContent" onclick="toggleContentVisibility('experience')">Experience</a>
+        <a href="#projectsContent" onclick="toggleContentVisibility('projects')">Projects</a>
+    </nav>
+    
+    <div class="container">
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="content" id="skillsContent">
+                <p>Programming Languages: HTML, CSS, JavaScript, Python</p>
+                <p>Tools & Technologies: Git, Docker, Node.js</p>
+                <p>Soft Skills: Teamwork, Communication, Problem-Solving</p>
+            </div>
+        </section>
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div class="content" id="educationContent">
+                <p>Bachelor of Science in Computer Science</p>
+                <p>Amrita University, 2023 - 2027</p>
+                <p>CGPA: 9/10</p>
+            </div>
+        </section>
+        <section id="experience" class="section">
+            <h2>Experience</h2>
+            <div class="content" id="experienceContent">
+                <p>Not Employed</p>
+                <p>Aug 2023 - Present</p>
+                <ul>
+                    <li>Developed and maintained web applications using HTML, CSS, and JavaScript.</li>
+                    <li>Collaborated with cross-functional teams to define, design, and ship new features.</li>
+                    <li>Worked on improving application performance and bug fixing.</li>
+                </ul>
+            </div>
+        </section>
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="content" id="projectsContent">
+                <p>Personal Portfolio Website</p>
+                <ul>
+                    <li>Designed and developed a personal portfolio website to showcase my web development projects and skills.</li>
+                    <li>Technologies used: HTML, CSS, JavaScript, React.</li>
+                </ul>
+                <p>E-commerce Website for Local Business</p>
+                <ul>
+                    <li>Developed a fully functional e-commerce website for a local business to expand their market online.</li>
+                    <li>Included features like product management, a shopping cart, and payment gateway integration.</li>
+                    <li>Technologies used: Django, HTML, CSS, JavaScript.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>
+            Gmail: <a href="mailto:ms.raaghavan@gmail.com" style="color: #007bff;">Get in touch</a> |
+            Phone: <a href="tel:+6303800138" style="color: #007bff;">6303800138</a> |
+            LinkedIn: <a href="https://in.linkedin.com/in/raaghavan-m-s-026359260" target="_blank" style="color: #007bff;">Connect</a>
+        </p>
+    </footer>
+
+    <script>
+        function toggleContentVisibility(sectionId)
+        {
+            var content = document.getElementById(sectionId + 'Content');
+            var isActive = content.classList.contains('active');
+            document.querySelectorAll('.content').forEach(function(c) { c.classList.remove('active'); });
+            if (!isActive) 
+            {
+                content.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
